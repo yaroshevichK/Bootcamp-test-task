@@ -19,6 +19,7 @@
 
     <modules>
         <module>database</module>
+        <module>service</module>
     </modules>
 
     <properties>
@@ -28,6 +29,7 @@
         <flyway.version>9.16.3</flyway.version>
         <mysql.version>8.1.0</mysql.version>
         <lombok.version>1.18.30</lombok.version>
+        <mapstruct.version>1.5.5.Final</mapstruct.version>
     </properties>
 
     <dependencyManagement>
@@ -57,6 +59,18 @@
                 <artifactId>lombok</artifactId>
                 <optional>true</optional>
                 <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
             </dependency>
 
         </dependencies>
