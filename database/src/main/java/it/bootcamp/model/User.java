@@ -13,17 +13,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import static it.bootcamp.Constants.DB_FIRST_NAME;
+import static it.bootcamp.Constants.DB_USERS;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = Constants.DB_USERS)
+@Table(name = DB_USERS)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = Constants.DB_FIRST_NAME)
+    @Column(name = DB_FIRST_NAME)
     private String firstName;
 
     @Column

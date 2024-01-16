@@ -9,15 +9,10 @@ import org.mapstruct.Mapping;
 
 import static it.bootcamp.Constants.MODEL_MAPPER;
 import static it.bootcamp.Constants.PATTERN_FULL_NAME;
-import static it.bootcamp.Constants.USER_ID;
 import static it.bootcamp.Constants.USER_LIST_FULL_NAME;
-import static it.bootcamp.Constants.USER_REQ_ROLE;
-import static it.bootcamp.Constants.USER_ROLE;
 
 @Mapper(componentModel = MODEL_MAPPER)
 public interface UserMapper {
-    @Mapping(target = USER_ROLE, source = USER_REQ_ROLE)
-    @Mapping(target = USER_ID, ignore = true)
     User userRequestToUserMapper(UserRequest userRequest);
 
     UserResponse userToUserResponseMapper(User user);
