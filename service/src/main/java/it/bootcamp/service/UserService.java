@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static it.bootcamp.Constants.USER_EMAIL;
+import static it.bootcamp.util.DataService.USER_EMAIL;
 
 @RequiredArgsConstructor
 @Service
