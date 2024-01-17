@@ -1,5 +1,8 @@
 package it.bootcamp.controller;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import it.bootcamp.dto.UserList;
 import it.bootcamp.dto.UserRequest;
 import it.bootcamp.dto.UserResponse;
@@ -24,12 +27,17 @@ import static it.bootcamp.util.ConstantsRest.PARAM_PAGE_NUMBER;
 import static it.bootcamp.util.ConstantsRest.USERS_BY_PAGE_POINT;
 import static it.bootcamp.util.ConstantsRest.USERS_POINT;
 
+@Tag(name = "Users", description = "Users API")
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(USERS_POINT)
 public class UserController {
     private final UserService userService;
 
+    @Operation(
+            summary = "Add new user",
+            tags = "Users"
+    )
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<UserResponse> addUser(@Valid @RequestBody UserRequest userRequest) {
         UserResponse user = userService.createUser(userRequest);
@@ -37,6 +45,10 @@ public class UserController {
     }
 
 
+    @Operation(
+            summary = "Get all users",
+            tags = "Users"
+    )
     @GetMapping
     public ResponseEntity<List<UserList>> getUsers() {
         List<UserList> users = userService.getAllUsers();
@@ -44,6 +56,10 @@ public class UserController {
     }
 
 
+    @Operation(
+            summary = "Get all users by page",
+            tags = "Users"
+    )
     @GetMapping(value = USERS_BY_PAGE_POINT)
     public ResponseEntity<List<UserList>> getUsersByPage(
             @RequestParam(value = PARAM_PAGE_NUMBER,
