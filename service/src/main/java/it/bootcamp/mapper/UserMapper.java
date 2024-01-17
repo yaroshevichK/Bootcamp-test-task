@@ -7,9 +7,9 @@ import it.bootcamp.model.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-import static it.bootcamp.util.DataService.MODEL_MAPPER;
-import static it.bootcamp.util.DataService.PATTERN_FULL_NAME;
-import static it.bootcamp.util.DataService.USER_LIST_FULL_NAME;
+import static it.bootcamp.util.ConstantsService.MODEL_MAPPER;
+import static it.bootcamp.util.ConstantsService.PATTERN_FULL_NAME;
+import static it.bootcamp.util.ConstantsService.USER_LIST_FULL_NAME;
 
 @Mapper(componentModel = MODEL_MAPPER)
 public interface UserMapper {

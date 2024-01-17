@@ -11,19 +11,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import static it.bootcamp.util.DataService.MAX_FIRST_NAME;
-import static it.bootcamp.util.DataService.MAX_MIDDLE_NAME;
-import static it.bootcamp.util.DataService.MAX_SURNAME;
-import static it.bootcamp.util.DataService.MESSAGE_EMAIL;
-import static it.bootcamp.util.DataService.MESSAGE_LATIN;
-import static it.bootcamp.util.DataService.MESSAGE_MIDDLE_NAME_LENGTH;
-import static it.bootcamp.util.DataService.MESSAGE_NAME_LENGTH;
-import static it.bootcamp.util.DataService.MESSAGE_NOT_BLANK;
-import static it.bootcamp.util.DataService.MESSAGE_SURNAME_LENGTH;
-import static it.bootcamp.util.DataService.MIN_FIRST_NAME;
-import static it.bootcamp.util.DataService.MIN_MIDDLE_NAME;
-import static it.bootcamp.util.DataService.MIN_SURNAME;
-import static it.bootcamp.util.DataService.PATTERN_LATIN;
+import static it.bootcamp.util.ConstantsService.MAX_FIRST_NAME;
+import static it.bootcamp.util.ConstantsService.MAX_MIDDLE_NAME;
+import static it.bootcamp.util.ConstantsService.MAX_SURNAME;
+import static it.bootcamp.util.ConstantsService.MESSAGE_EMAIL;
+import static it.bootcamp.util.ConstantsService.MESSAGE_LATIN;
+import static it.bootcamp.util.ConstantsService.MESSAGE_MIDDLE_NAME_LENGTH;
+import static it.bootcamp.util.ConstantsService.MESSAGE_NAME_LENGTH;
+import static it.bootcamp.util.ConstantsService.MESSAGE_NOT_BLANK;
+import static it.bootcamp.util.ConstantsService.MESSAGE_SURNAME_LENGTH;
+import static it.bootcamp.util.ConstantsService.MIN_FIRST_NAME;
+import static it.bootcamp.util.ConstantsService.MIN_MIDDLE_NAME;
+import static it.bootcamp.util.ConstantsService.MIN_SURNAME;
+import static it.bootcamp.util.ConstantsService.PATTERN_LATIN;
 
 @Data
 @NoArgsConstructor

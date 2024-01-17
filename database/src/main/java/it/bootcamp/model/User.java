@@ -1,6 +1,6 @@
 package it.bootcamp.model;
 
-import it.bootcamp.util.DataDatabase;
+import it.bootcamp.util.ConstantsDatabase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -13,8 +13,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import static it.bootcamp.util.DataDatabase.DB_FIRST_NAME;
-import static it.bootcamp.util.DataDatabase.DB_USERS;
+import static it.bootcamp.util.ConstantsDatabase.DB_FIRST_NAME;
+import static it.bootcamp.util.ConstantsDatabase.DB_USERS;
 
 @Data
 @NoArgsConstructor
@@ -32,7 +32,7 @@ public class User {
     @Column
     private String surname;
 
-    @Column(name = DataDatabase.DB_MIDDLE_NAME)
+    @Column(name = ConstantsDatabase.DB_MIDDLE_NAME)
     private String middleName;
 
     @Column

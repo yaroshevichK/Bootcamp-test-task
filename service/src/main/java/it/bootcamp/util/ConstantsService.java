@@ -1,10 +1,11 @@
 package it.bootcamp.util;
 
-public class DataService {
+public class ConstantsService {
     public static final String MODEL_MAPPER = "spring";
     public static final String USER_LIST_FULL_NAME = "fullName";
     public static final String PATTERN_FULL_NAME = "%s %s %s";
     public static final String USER_EMAIL = "email";
+    public static final int PAGE_SIZE = 10;
 
     //validation
     public static final String MESSAGE_NOT_BLANK = "{not-blank}";

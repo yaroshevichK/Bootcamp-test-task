@@ -7,13 +7,18 @@ import it.bootcamp.mapper.UserMapper;
 import it.bootcamp.model.User;
 import it.bootcamp.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static it.bootcamp.util.DataService.USER_EMAIL;
+import static it.bootcamp.util.ConstantsService.PAGE_SIZE;
+import static it.bootcamp.util.ConstantsService.USER_EMAIL;
 
 @RequiredArgsConstructor
 @Service
@@ -39,5 +44,25 @@ public class UserService {
         return users.stream()
                 .map(userMapper::userToUserListMapper)
                 .collect(Collectors.toList());
+    }
+
+    public Page<UserList> getUsersByPage(int pageNumber) {
+        Pageable pageable = PageRequest.of(
+                pageNumber - 1,
+                PAGE_SIZE,
+                Sort.Direction.ASC,
+                USER_EMAIL
+        );
+        Page<User> pageUsers = userRepository.findAll(pageable);
+
+        List<UserList> users = pageUsers.getContent().stream()
+                .map(userMapper::userToUserListMapper)
+                .toList();
+
+
+        return new PageImpl<>(
+                users,
+                pageable,
+                pageUsers.getTotalElements());
     }
 }

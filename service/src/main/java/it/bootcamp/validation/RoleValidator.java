@@ -10,7 +10,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import static it.bootcamp.util.DataService.MESSAGE_ROLE;
+import static it.bootcamp.util.ConstantsService.MESSAGE_ROLE;
 
 @Documented
 @Constraint(validatedBy = RoleValidatorConstraint.class)
