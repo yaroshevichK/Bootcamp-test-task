@@ -21,6 +21,9 @@ public class ConstantsService {
     public static final int MIN_MIDDLE_NAME = 3;
     public static final int MAX_MIDDLE_NAME = 40;
     public static final String MESSAGE_EMAIL = "{email}";
-
     public static final String MESSAGE_ROLE = "{roles}";
+    public static final String ERROR_EMAIL_NOT_UNIQUE = "User email not unique: %s";
+    public static final String ERROR_NO_CONTENT = "There is no data to display";
+    public static final String ERROR_PAGE_NOT_POSITIVE = "Page must be positive and not equals 0";
+    public static final String ERROR_PAGE_NOT_CORRECT = "Page not correct. Count pages in database: %s";
 }

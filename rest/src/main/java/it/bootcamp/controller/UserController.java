@@ -40,7 +40,6 @@ public class UserController {
     @GetMapping
     public ResponseEntity<List<UserList>> getUsers() {
         List<UserList> users = userService.getAllUsers();
-
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
@@ -53,7 +52,6 @@ public class UserController {
             int pageNumber
     ) {
         Page<UserList> pageUsers = userService.getUsersByPage(pageNumber);
-
         return new ResponseEntity<>(pageUsers.getContent(), HttpStatus.OK);
     }
 
