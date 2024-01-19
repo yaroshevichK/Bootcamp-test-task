@@ -35,13 +35,7 @@ public class UserService {
     private final UserMapper userMapper;
 
     public UserResponse createUser(UserRequest userRequest) {
-        User findUser = userRepository.findByEmail(userRequest.getEmail());
-        if (findUser != null) {
-            throw new NotUniqueException(
-                    String.format(ERROR_EMAIL_NOT_UNIQUE,
-                            userRequest.getEmail())
-            );
-        }
+        validateEmail(userRequest);
 
         User user = userMapper.userRequestToUserMapper(userRequest);
         user = userRepository.save(user);
@@ -87,6 +81,15 @@ public class UserService {
                 pageUsers.getTotalElements());
     }
 
+    private void validateEmail(UserRequest userRequest) {
+        User findUser = userRepository.findByEmail(userRequest.getEmail());
+        if (findUser != null) {
+            throw new NotUniqueException(
+                    String.format(ERROR_EMAIL_NOT_UNIQUE,
+                            userRequest.getEmail())
+            );
+        }
+    }
 
     private void validationPage(int pageNumber, Page<User> pageUsers) {
         if (pageUsers.getTotalPages() == 0) {
