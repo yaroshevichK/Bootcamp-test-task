@@ -3,7 +3,6 @@ package it.bootcamp.repository;
 import it.bootcamp.TestApplication;
 import it.bootcamp.Util;
 import it.bootcamp.model.User;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

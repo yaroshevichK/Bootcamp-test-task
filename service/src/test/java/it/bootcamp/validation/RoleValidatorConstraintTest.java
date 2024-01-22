@@ -22,8 +22,6 @@ class RoleValidatorConstraintTest {
 
     private static ValidatorFactory validatorFactory;
     private static Validator validator;
-    private UserRequest userResponse;
-
 
     @BeforeAll
     public static void createValidator() {
